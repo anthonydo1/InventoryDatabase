@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyBu8xLhmuGeL77Cwii76pqbX0YmQxYS2i8",
-    authDomain: "inventorydatabase-f1f5e.firebaseapp.com",
-    databaseURL: "https://inventorydatabase-f1f5e.firebaseio.com",
-    projectId: "inventorydatabase-f1f5e",
+    apiKey: "<API_KEY>",
+    authDomain: "<AUTH_DOMAIN>",
+    databaseURL: "<DATABASE_URL>",
+    projectId: "<PROJECT_ID>",
     storageBucket: "",
-    messagingSenderId: "377740616052",
-    appId: "1:377740616052:web:d80ea5d77f06c589"
+    messagingSenderId: "<SENDER_ID>",
+    appId: "<APP_ID>"
 };
 
 // Initialize Firebase
