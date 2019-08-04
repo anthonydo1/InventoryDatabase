@@ -17,12 +17,12 @@ var deleteButton = document.getElementById("btn-delete");
 var updateButton = document.getElementById("btn-update");
 
 
-createButton.onclick = function() {
+createButton.onclick = () => {
     createItem();
 }
 
 
-updateButton.onclick = function() {
+updateButton.onclick = () => {
     var key = document.getElementById("id").value;
     
     if (key != "") {
@@ -31,12 +31,12 @@ updateButton.onclick = function() {
 }
 
 
-deleteButton.onclick = function() {
+deleteButton.onclick = () => {
     firebase.database().ref("items").remove();
 }
 
 
-firebase.database().ref("items").orderByChild("itemName").on("value", function(snapshot) {
+firebase.database().ref("items").orderByChild("itemName").on("value", (snapshot) => {
     document.getElementById('tbody').innerHTML = "";
 
     snapshot.forEach(function(childSnapshot) {
@@ -58,7 +58,10 @@ function createItem() {
             price: parseFloat(price),
             quantity: parseInt(quantity)
         }
-    )
+    ).then((snap) => {
+        const key = snap.key;
+        document.getElementById("id").value = key;
+    })
 }
 
 
@@ -69,7 +72,7 @@ function deleteItem(key) {
 
 
 function editItem(key) {
-    firebase.database().ref("items").child(key).once("value", function(snapshot) {
+    firebase.database().ref("items").child(key).once("value", (snapshot) => {
         var itemData = snapshot.val();
         document.getElementById("id").value = snapshot.key;
         document.getElementById("itemname").value = itemData.itemName;
@@ -122,11 +125,12 @@ function createListElement(key, name, price, quantity) {
 
     document.getElementById('tbody').appendChild(listContainer);
 
-    deleteButton.addEventListener("click", function() {
+    deleteButton.addEventListener("click", () => {
         deleteItem(key);
     })
 
-    editButton.addEventListener("click", function() {
+    editButton.addEventListener("click", () => {
         editItem(key);
     })   
 }
+
