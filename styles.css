@@ -1,0 +1,27 @@
+.d-flex button {
+    margin: 1.5em .6em;
+    padding: .3em 2.4em;
+}
+
+table .btnedit {
+    width: 10;
+    height: 10;
+    outline: none;
+    border: none;
+    background: none;
+    background-color: Transparent;
+    color: lightgreen;
+    cursor: pointer;
+}
+
+table .btndelete {
+    width: 10;
+    height: 10;
+    outline: none;
+    border: none;
+    background: none;
+    background-color: Transparent;
+    color: rgb(238, 64, 72);
+    cursor: pointer;
+}
+
