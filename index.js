@@ -5,7 +5,7 @@ var firebaseConfig = {
     projectId: "<PROJECT_ID>",
     storageBucket: "",
     messagingSenderId: "<SENDER_ID>",
-    appId: "<APP_ID>"
+    appId: "<APPLICATION_ID>"
 };
 
 // Initialize Firebase
